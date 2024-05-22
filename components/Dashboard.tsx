@@ -1,12 +1,13 @@
-//Dashboard : For Frontend, Here we use useSession() hook for session data and status . 
-//getUser : For Backend, Here we use getServerSession() to protect an API Route.
+//Dashboard : For Frontend (Client), Here we use useSession() hook for session data and status . 
+//getUser : For Backend (Server), Here we use getServerSession() to protect an API Route.
 
 "use client"
 import { signIn, signOut, useSession } from 'next-auth/react'
 import React from 'react'
 
 const Dashboard = () => {
-    const { data: session } = useSession() //object destructuring to extract the data property from the object returned by the useSession() hook and assign it to a variable named session.
+    const { data: session } = useSession() //object destructuring to extract the "data" property from the object returned by the useSession() hook and assign it to a variable named "session".
+
     return (
         <>
             {session ?
